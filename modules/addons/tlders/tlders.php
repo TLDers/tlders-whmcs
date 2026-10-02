@@ -16,7 +16,9 @@ if (!defined('WHMCS')) {
 use WHMCS\Database\Capsule;
 
 const TLDERS_API = 'https://www.tlders.com/api/v1';
-const TLDERS_CACHE_TTL = 6 * 3600;
+// TLDers refreshes prices once a day, so a day's cache loses nothing and keeps a free API key
+// (100 requests/month; one refresh = 3 requests) within its quota.
+const TLDERS_CACHE_TTL = 24 * 3600;
 
 function tlders_config()
 {
@@ -25,7 +27,7 @@ function tlders_config()
         'description' => 'Compare your domain prices with the cheapest of 145+ registrars, updated daily.',
         'author' => '<a href="https://www.tlders.com" target="_blank">TLDers</a>',
         'language' => 'english',
-        'version' => '1.0.0',
+        'version' => '1.0.1',
         'fields' => [
             'apiKey' => [
                 'FriendlyName' => 'TLDers API key',
@@ -212,5 +214,5 @@ function tlders_output($vars)
     }
 
     echo '</tbody></table><p class="text-muted small">Market data from '
-        . '<a href="https://www.tlders.com" target="_blank">TLDers</a>, refreshed daily. Cached for 6 hours.</p>';
+        . '<a href="https://www.tlders.com" target="_blank">TLDers</a>, refreshed daily. Cached for 24 hours.</p>';
 }

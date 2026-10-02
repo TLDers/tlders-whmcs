@@ -10,7 +10,7 @@ refreshed daily).
 
 ## Install
 
-1. Download [tlders-whmcs-1.0.0.zip](https://github.com/TLDers/tlders-whmcs/releases/download/v1.0.0/tlders-whmcs-1.0.0.zip)
+1. Download [tlders-whmcs-1.0.1.zip](https://github.com/TLDers/tlders-whmcs/releases/download/v1.0.1/tlders-whmcs-1.0.1.zip)
    and upload `modules/addons/tlders/` into your WHMCS root, so you get
    `<whmcs>/modules/addons/tlders/tlders.php`.
 2. **Setup → Addon Modules → TLDers Price Monitor → Activate**.
@@ -22,8 +22,17 @@ Requires WHMCS 8+, PHP 7.4+ and cURL.
 
 ## Packaging for the WHMCS Marketplace
 
-The zip is attached to each [release](https://github.com/TLDers/tlders-whmcs/releases).
+This folder is published as https://github.com/TLDers/tlders-whmcs, with the zip attached to each release.
 
 ```sh
-zip -r tlders-whmcs-1.0.0.zip modules README.md
+cd whmcs-module && zip -r tlders-whmcs-1.0.1.zip modules README.md
 ```
+
+## Changelog
+
+### 1.0.1
+- Market prices are cached for 24 hours instead of 6. TLDers updates prices once a day, so
+  nothing is lost, and a free API key (100 requests a month) now lasts the whole month.
+
+### 1.0.0
+- First release.
