@@ -36,3 +36,9 @@ cd whmcs-module && zip -r tlders-whmcs-1.0.1.zip modules README.md
 
 ### 1.0.0
 - First release.
+
+## More from TLDers
+
+- [WordPress plugin](https://wordpress.org/plugins/tlders-domain-prices/) (free)
+- [Codester shop](https://www.codester.com/tlders/shop) (PHP script and mobile apps)
+- [All products](https://www.tlders.com/products)
